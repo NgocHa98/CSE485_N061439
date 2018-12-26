@@ -3,20 +3,31 @@
 ?>
 <br>
 <div id="phim" style="background-color: whitesmoke">
+<?php
+        include("lib/connection.php");                
+        $sql = "select * from khuyenmai where idKM='5' ";                
+        $result=mysqli_query($conn,$sql) or die(mysql_error());
+        while($row=mysqli_fetch_array($result))
+    {?>   
     <div class="row">
         <div class="col-md-2"></div>
+
         <div class="col-md-8">
+
         <br> <br>
-        <font face="Comic sans MS" size="7" >Đăng Ký Nhận Quà - Xem Phim Thả Ga</font>
+        <font face="Comic sans MS" size="7" ><?php echo $row["TenKM"]?></font> 
 <br> <br> 
 <span style="font-size: 15px">
     <p>
-    Từ 01.12.2018 - 31/01/2019, khi đăng ký thẻ tín dụng ACB, SCB, Standard Chartered và HSBC   <br> <br>
-    bạn sẽ nhận được voucher xem phim miễn phí từ HM Cinema.
+    <?php echo $row["ChitietKM"]?>
     </p></span>
         <br> <br>
-<img src= "./style/img/km33.jpg" class="img-thumbnail" alt="">
+        <div>
+<img src= "./style/img/<?php echo $row["hinhanh"]?>" class="img-thumbnail" alt="">
+</div>
 </div>
 </div>
 <?php
+    }
     include("./includes/footer.php");
+    ?>
