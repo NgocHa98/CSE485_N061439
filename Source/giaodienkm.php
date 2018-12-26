@@ -22,11 +22,16 @@
        
         <br><br>
         <div class="row">
-            
+        <?php
+            include("lib/connection.php");                
+            $sql = "select * from khuyenmai where idKM='1' ";                
+            $result=mysqli_query($conn,$sql) or die(mysql_error());
+            while($row=mysqli_fetch_array($result))
+        {?>   
             <div class="col-md-4"> 
-                <center><img src= "./style/img/km1.png" class="img-thumbnail" alt="">
+                <center><img src= "./style/img/<?php echo $row["Image"] ?>" class="img-thumbnail" alt="">
                     <div class ="caption">
-                        <h4>Móc Khóa Cực Cool Chào Bumblebee Trở Lại</h4>
+                        <h4><?php echo $row["TenKM"] ?></h4>
                         <p>
                             <a href="km1.php" class="btn btn-danger">Chi tiết</a> 
                            
@@ -34,10 +39,17 @@
                     </div>
                 </center>
             </div>
+            <?php
+            include("lib/connection.php");                
+            $sql = "select * from khuyenmai where idKM='2' ";                
+            $result=mysqli_query($conn,$sql) or die(mysql_error());
+            while($row=mysqli_fetch_array($result))
+        {?>   
             <div class="col-md-4"> 
-                <center><img src= "./style/img/km2.png" class="img-thumbnail" alt="">
+                <center><img src= "./style/img/<?php echo $row["Image"] ?>" class="img-thumbnail" alt="">
                     <div class ="caption">
-                        <h4>Đón Giáng Sinh – Nhận Quà Xinh</h4>
+                        <h4><?php echo $row["TenKM"] ?></h4>
+           
                         <p>
                             <a href="km2.php" class="btn btn-danger">Chi tiết</a> 
                             
@@ -45,10 +57,16 @@
                     </div>
                 </center>
             </div>
+            <?php
+                include("lib/connection.php");                
+                $sql = "select * from khuyenmai where idKM='3' ";                
+                $result=mysqli_query($conn,$sql) or die(mysql_error());
+                while($row=mysqli_fetch_array($result))
+            {?>   
             <div class="col-md-4"> 
-                <center><img src= "./style/img/km3.png" class="img-thumbnail" alt="">
+                <center><img src= "./style/img/<?php echo $row["Image"] ?>" class="img-thumbnail" alt="">
                     <div class ="caption">
-                        <h4>Ngày Tri Ân Của HM Cinema - Ngày Thứ Hai ĐẦU TIÊN Mỗi Tháng</h4>
+                        <h4><?php echo $row["TenKM"] ?></h4>
                         <p>
                             <a href="km3.php" class="btn btn-danger">Chi tiết</a> 
                            
@@ -60,10 +78,16 @@
         <div class=row></div>
         <div class="row">
             
-            <div class = "col-md-4">
-               <center> <img src= "./style/img/km4.png" class="img-thumbnail" alt="">
+        <?php
+            include("lib/connection.php");                
+            $sql = "select * from khuyenmai where idKM='4' ";                
+            $result=mysqli_query($conn,$sql) or die(mysql_error());
+            while($row=mysqli_fetch_array($result))
+        {?>   
+            <div class="col-md-4"> 
+                <center><img src= "./style/img/<?php echo $row["Image"] ?>" class="img-thumbnail" alt="">
                     <div class ="caption">
-                        <h4>Sở Hữu Quyển Sách Phép Thuật Với Combo Fantastic Beasts</h4>
+                        <h4><?php echo $row["TenKM"] ?></h4>
                         <p>
                             <a href="km4.php" class="btn btn-danger">Chi tiết</a> 
                            
@@ -72,10 +96,16 @@
                 </center>    
             </div>
       
-            <div class = "col-md-4">
-               <center> <img src= "./style/img/km5.png" class="img-thumbnail" alt="">
+            <?php
+            include("lib/connection.php");                
+            $sql = "select * from khuyenmai where idKM='5' ";                
+            $result=mysqli_query($conn,$sql) or die(mysql_error());
+            while($row=mysqli_fetch_array($result))
+        {?>   
+            <div class="col-md-4"> 
+                <center><img src= "./style/img/<?php echo $row["Image"] ?>" class="img-thumbnail" alt="">
                     <div class ="caption">
-                        <h4>Đăng Ký Nhận Quà - Xem Phim Thả Ga</h4>
+                        <h4><?php echo $row["TenKM"] ?></h4>
                         <p>
                             <a href="km5.php" class="btn btn-danger">Chi tiết</a> 
                      
@@ -84,11 +114,16 @@
                 </center>    
             </div>
         
-            <div class = "col-md-4">
-            
-                <center><img src= "./style/img/km6.png" class="img-thumbnail" alt="">
+            <?php
+            include("lib/connection.php");                
+            $sql = "select * from khuyenmai where idKM='6' ";                
+            $result=mysqli_query($conn,$sql) or die(mysql_error());
+            while($row=mysqli_fetch_array($result))
+        {?>   
+            <div class="col-md-4"> 
+                <center><img src= "./style/img/<?php echo $row["Image"] ?>" class="img-thumbnail" alt="">
                     <div class ="caption">
-                        <h4>Săn Vé Rinh Quà Liền Tay Cùng FIM+</h4>
+                        <h4><?php echo $row["TenKM"] ?></h4>
                         <p>
                             <a href="km6.php" class="btn btn-danger">Chi tiết</a> 
                         
@@ -105,5 +140,7 @@
        
    
 <?php
+        }}}}}
+        }
     include("./includes/footer.php");
 ?>
