@@ -1,18 +1,24 @@
+<div id = "main">
 <?php
+include("./includes/header.php");
+
+
 session_start();
 //tiến hành kiểm tra là người dùng đã đăng nhập hay chưa
 //nếu chưa, chuyển hướng người dùng ra lại trang đăng nhập
 if (!isset($_SESSION['username'])) {
-	 header('Location: login.php');
+     header('Location: login.php');
 }
+else {
+    echo"<br>";
+    echo"<div class='row'>";
+  echo "<div class='col-md-9'></div>";
+  echo"  <div class='col-md-3'>";
+    echo "<p >Xin chào: &nbsp" . $_SESSION['username'] ."|| <a href='logout.php' style='color:blue'>Đăng Xuất</a> </p>";
+    echo"</div>";
+echo"</div>";
+    }
 ?>
-<?php
-    include("./includes/header.php");
-    include("./includes/menu_logout.php");
-?>
-
-<div id = "main">
-   <br> <br>
   
    <center> <font face="Comic sans MS" size="9" >** Merry Christmas **</font> </center>
     <div class="row">  
@@ -68,89 +74,137 @@ if (!isset($_SESSION['username'])) {
        
         <br><br>
         <div class="row">
-            
+        
+           
             <div class="col-md-4"> 
-                <center><img src= "./img/robin hood.jpg" class="img-thumbnail" alt="">
-                    <div class ="caption">
-                        <h4>Robin hood</h4>
-                        <p>
-                            <a href="#" class="btn btn-danger">Chi tiết</a> 
-                            <a href="#" class="btn btn-danger">Đặt vé</a>
-                        </p>
-                    </div>
-                </center>
+            <?php
+                include("lib/connection.php");
+                
+                $sql = "select * from phim where id='1' ";
+                
+                $result=mysqli_query($conn,$sql) or die(mysql_error());           
+                while($row=mysqli_fetch_array($result))
+                {?>
+                    <center><img class="img-thumbnail" src= "./style/img/<?php echo $row["image"] ?>"width="250" height="200"  alt="" />
+                        <div class ="caption">
+                            <h4><?php echo $row["tenphim"] ?></h4>
+                            <p>
+                                <a href="phimnguoinhen.php" class="btn btn-danger">Chi tiết</a> 
+                                <a href="datve.php" class="btn btn-danger">Đặt vé</a>
+                            </p>
+                        </div>
+                    </center>
             </div>
+                 
             <div class="col-md-4"> 
-                <center><img src= "./img/Ralph breaks the internet.jpg" class="img-thumbnail" alt="">
-                    <div class ="caption">
-                        <h4>Ralph breaks the internet</h4>
-                        <p>
-                            <a href="phimRalph.php" class="btn btn-danger">Chi tiết</a> 
-                            <a href="#" class="btn btn-danger">Đặt vé</a>
-                        </p>
-                    </div>
-                </center>
+                <?php
+                include("lib/connection.php");            
+                $sql = "select * from phim where id='2' ";            
+                $result=mysqli_query($conn,$sql) or die(mysql_error());
+                while($row=mysqli_fetch_array($result))
+                {?>            
+                    <center><img src= "./style/img/<?php echo $row["image"] ?>" width="250" height="200" class="img-thumbnail" alt="" >
+                        <div class ="caption">
+                            <h4><?php echo $row["tenphim"] ?></h4>
+                            <p>
+                                <a href="phimRalph.php" class="btn btn-danger">Chi tiết</a> 
+                                <a href="#" class="btn btn-danger">Đặt vé</a>
+                            </p>
+                        </div>
+                    </center>
             </div>
+                
             <div class="col-md-4"> 
-                <center><img src= "./img/comaytuthan.jpg" class="img-thumbnail" alt="">
-                    <div class ="caption">
-                        <h4>Cỗ máy tử thần</h4>
-                        <p>
-                            <a href="phimcomaytuthan.php" class="btn btn-danger">Chi tiết</a> 
-                            <a href="#" class="btn btn-danger">Đặt vé</a>
-                        </p>
-                    </div>
-                </center>
+                <?php
+                    include("lib/connection.php");                
+                    $sql = "select * from phim where id='3' ";                
+                    $result=mysqli_query($conn,$sql) or die(mysql_error());
+                    while($row=mysqli_fetch_array($result))
+                {?>            
+                    <center><img src= "./style/img/<?php echo $row["image"] ?>"  width="250" height="200" class="img-thumbnail" alt="">
+                        <div class ="caption">
+                            <h4><?php echo $row["tenphim"] ?></h4>
+                            <p>
+                                <a href="phimcomaytuthan.php" class="btn btn-danger">Chi tiết</a> 
+                                <a href="#" class="btn btn-danger">Đặt vé</a>
+                            </p>
+                        </div>
+                    </center>
             </div>
+                
         </div>
         <div class=row></div>
         <div class="row">
             
-            <div class = "col-md-4">
-               <center> <img src= "./img/hunter killer.jpg"  width="250" height="200" class="img-thumbnail" alt="">
-                    <div class ="caption">
-                        <h4>Hunter killer</h4>
-                        <p>
-                            <a href="phimmatvu.php" class="btn btn-danger">Chi tiết</a> 
-                            <a href="#" class="btn btn-danger">Đặt vé</a>
-                        </p>
-                    </div>
-                </center>    
+            <div class="col-md-4"> 
+                <?php
+                    include("lib/connection.php");                
+                    $sql = "select * from phim where id='4' ";                
+                    $result=mysqli_query($conn,$sql) or die(mysql_error());
+                    while($row=mysqli_fetch_array($result))
+                {?>            
+                    <center><img src= "./style/img/<?php echo $row["image"] ?>" width="250" height="200" class="img-thumbnail" alt="" >
+                        <div class ="caption">
+                            <h4><?php echo $row["tenphim"] ?></h4>
+                            <p>
+                                <a href="phimmatvu.php" class="btn btn-danger">Chi tiết</a> 
+                                <a href="#" class="btn btn-danger">Đặt vé</a>
+                            </p>
+                        </div>
+                    </center>
             </div>
+                
 
-            <div class = "col-md-4">
-               <center> <img src= "./img/gaigialamchieu.jpg" width="250" height="200" class="img-thumbnail" alt="">
-                    <div class ="caption">
-                        <h4>Gái già lắm chiêu</h4>
-                        <p>
-                            <a href="phimgaigia.php" class="btn btn-danger">Chi tiết</a> 
-                            <a href="#" class="btn btn-danger">Đặt vé</a>
-                        </p>
-                    </div>
-                </center>    
+            <div class="col-md-4"> 
+                <?php
+                    include("lib/connection.php");                
+                    $sql = "select * from phim where id='5' ";                
+                    $result=mysqli_query($conn,$sql) or die(mysql_error());
+                    while($row=mysqli_fetch_array($result))
+                {?>            
+                    <center><img src= "./style/img/<?php echo $row["image"] ?>" width="250" height="200" class="img-thumbnail" alt="" >
+                        <div class ="caption">
+                            <h4><?php echo $row["tenphim"] ?></h4>
+                            <p>
+                                <a href="phimcomaytuthan.php" class="btn btn-danger">Chi tiết</a> 
+                                <a href="#" class="btn btn-danger">Đặt vé</a>
+                            </p>
+                        </div>
+                    </center>
             </div>
+                
         
-            <div class = "col-md-4">
-            
-                <center><img src= "./img/honpapa.jpg" width="250" height="200" class="img-thumbnail" alt="">
-                    <div class ="caption">
-                        <h4>Hồn papa, da con gái</h4>
-                        <p>
-                            <a href="phimhonpapa.php" class="btn btn-danger">Chi tiết</a> 
-                            <a href="#" class="btn btn-danger">Đặt vé</a>
-                        </p>
-                    </div>
-                </center>    
+            <div class="col-md-4"> 
+                <?php
+                    include("lib/connection.php");                
+                    $sql = "select * from phim where id='6' ";                
+                    $result=mysqli_query($conn,$sql) or die(mysql_error());
+                    while($row=mysqli_fetch_array($result))
+                {?>            
+                    <center><img src= "./style/img/<?php echo $row["image"] ?>" width="250" height="200" class="img-thumbnail" >
+                        <div class ="caption">
+                            <h4><?php echo $row["tenphim"] ?></h4>
+                            <p>
+                                <a href="phimhonpapa.php" class="btn btn-danger">Chi tiết</a> 
+                                <a href="#" class="btn btn-danger">Đặt vé</a>
+                            </p>
+                        </div>
+                    </center>
             </div>
+                
         </div>
        
     </div>
-    
     
                
        
    
 <?php
+                    }
+                }
+            }
+        }
+    }
+}
     include("./includes/footer.php");
 ?>
-
