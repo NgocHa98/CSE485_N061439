@@ -151,3 +151,53 @@ INSERT INTO `khuyenmai` (`IdKM`, `TenKM`, `Image`, `ChitietKM`, `hinhanh`) VALUE
 (5, 'Đăng Ký Nhận Quà - Xem Phim Th', 'km5.png', 'Từ 01.12.2018 - 31/01/2019, khi đăng ký thẻ tín dụng ACB, SCB, Standard Chartered và HSBC   <br> <br>\r\n    bạn sẽ nhận được voucher xem phim miễn phí từ HM Cinema.', 'km33.jpg'),
 (6, 'Săn Vé Rinh Quà Liền Tay Cùng ', '\r\nkm6.png', 'Mọt phim” không thể bỏ qua cơ hội luyện phim không giới hạn cùng chương trình ưu đãi siêu cấp hấp dẫn nhất<br> <br>\r\n     từ HM Cinema và FIM+ ngay hôm nay!\r\n     <br/> <br/>\r\nTừ 24/11 – 28/01/2019, khi mua 02 vé phim 2D, các Stars sẽ nhận ngay 2 tháng xem phim thả ga hàng ngàn phim <br/> <br/>\r\n     trong kho phim Chuẩn tại ứng dụng xem phim bản quyền số 1 Việt Nam FIM+.<br/> <br/>\r\n\r\n     Điều kiện chương trình:<br/> <br/>\r\n\r\n    Ap dụng cho khách hàng mua 02 vé Online tại website: www.galaxycine.vn hoặc mua vé tại quầy vé của hệ thống Galaxy trên<br/> <br/>\r\n     toàn quốc.<br/> <br/>\r\n    Chương trình sẽ kết thúc vào ngày 28/01/2019 hoặc khi phát hết số lượng voucher tùy điều kiện nào đến trước<br/> <br/>\r\n    Trong mọi trường hợp quyết định của HM Cinema là quyết định cuối cùng<br/> <br/>\r\n    Thông tin chi tiết về ứng dụng FIM+ xin liên hệ hotline: 1800 9090', 'km55.jpg');
 
+
+CREATE TABLE `rap` (
+  `idrap` int(15) NOT NULL,
+  `KhuVuc` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `DiaChi` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `GioiThieu` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `rap`
+--
+
+INSERT INTO `rap` (`idrap`, `KhuVuc`, `DiaChi`, `GioiThieu`, `image`) VALUES
+(1, 'Đà Nẵng', 'Tầng 3 Coop Mart, 478 Điện Biên Phủ, Quận Thanh Khê, Đà Nẵng', '', '0'),
+(2, 'Hà Nội', ' HM Tây Sơn  ( Tầng 6, tòa nhà Mipec Tower, Số 175, Phố Tây Sơn, Phường Trung Liệt, Q.Đống Đa, Hà Nội)', '', '0'),
+(3, 'Tp. Hồ Chí Minh', 'HM Nguyễn Du (116 Nguyễn Du, Quận 1, Tp.HCM)', 'Đến với HM Cinema Tây Sơn, khán giả sẽ được thưởng thức các siêu phẩm của điện ảnh Việt Nam và thế giới tại một hệ thống rạp chiếu phim hiện đại đạt chuẩn Hollywood gồm 07 phòng chiếu công nghệ 2D &3D cùng hệ thống âm thanh Dolby 7.1 tiêu chuẩn quốc tế theo đúng tiêu chí “Mang Hollywood đến gần bạn”.\r\n\r\n \r\n\r\nCó thiết kế trẻ trung, dịch vụ thân thiện, HM Cinema mong muốn sẽ là địa điểm tụ họp của những người đam mê màn ảnh rộng, muốn thỏa sức vùng vẫy trong không gian điện ảnh vô cùng sống động và tận hưởng những bộ phim mới phim hay cùng lúc với các mọt phim thế giới.\r\n\r\n \r\n\r\nNgoài ra, với chính sách giá cả vô cùng hợp lý, những trải nghiệm điện ảnh chất lượng cao tại HM Cinema không hề đắt đỏ với công chúng. Galaxy Cinema tự tin là người bạn đồng hành cho nhu cầu giải trí tổng hợp của đông đảo khán giả thủ đô.', '0');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `rap`
+--
+ALTER TABLE `rap`
+  ADD PRIMARY KEY (`idrap`);
+
+CREATE TABLE `comment` (
+  `cm_id` int(11) NOT NULL,
+  `name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `time` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Indexes for table `comment`
+--
+ALTER TABLE `comment`
+  ADD PRIMARY KEY (`cm_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `comment`
+--
+ALTER TABLE `comment`
+  MODIFY `cm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
