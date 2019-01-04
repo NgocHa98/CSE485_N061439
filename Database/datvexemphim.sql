@@ -143,6 +143,81 @@ CREATE TABLE `khuyenmai` (
 
 
 
+CREATE TABLE `datve` (
+  `id` int(11) NOT NULL,
+  `tenkhach` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sdt` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tenphim` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `rap` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ngay` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sldat` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `datve`
+--
+
+INSERT INTO `datve` (`id`, `tenkhach`, `sdt`, `tenphim`, `rap`, `ngay`, `sldat`) VALUES
+(1, 'Anh Thảo', '098142908', 'Gái già lắm chiêu', 'Tầng 3 Coop Mart, 478 Điện Biên Phủ, Quận Thanh Khê, Đà Nẵng', 'Jan-20', 2),
+(2, 'Phạm Trường', '0981425890', 'SPIDER-MAN:INTO THE SPIDER-VERSE', 'HM Nguyễn Du (116 Nguyễn Du, Quận 1, Tp.HCM)', 'Jan-7', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `khove`
+--
+
+CREATE TABLE `khove` (
+  `tenphim` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `rap` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ngay` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slton` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `khove`
+--
+
+INSERT INTO `khove` (`tenphim`, `rap`, `ngay`, `slton`) VALUES
+('SPIDER-MAN:INTO THE SPIDER-VERSE', 'HM Nguyễn Du (116 Nguyễn Du, Quận 1, Tp.HCM)', 'Jan-6', 100),
+('SPIDER-MAN:INTO THE SPIDER-VERSE', 'HM Nguyễn Du (116 Nguyễn Du, Quận 1, Tp.HCM)', 'Jan-7', 100),
+('SPIDER-MAN:INTO THE SPIDER-VERSE', 'HM Nguyễn Du (116 Nguyễn Du, Quận 1, Tp.HCM)', 'Jan-8', 100),
+('SPIDER-MAN:INTO THE SPIDER-VERSE', 'Tầng 3 Coop Mart, 478 Điện Biên Phủ, Quận Thanh Khê, Đà Nẵng', 'Jan-6', 90),
+('SPIDER-MAN:INTO THE SPIDER-VERSE', 'HM Tây Sơn  ( Tầng 6, tòa nhà Mipec Tower, Số 175, Phố Tây Sơn, Phường Trung Liệt, Q.Đống Đa, Hà Nội)', 'Jan-6', 100),
+('SPIDER-MAN:INTO THE SPIDER-VERSE', 'HM Tây Sơn  ( Tầng 6, tòa nhà Mipec Tower, Số 175, Phố Tây Sơn, Phường Trung Liệt, Q.Đống Đa, Hà Nội)', 'Jan-7', 100),
+('SPIDER-MAN:INTO THE SPIDER-VERSE', 'HM Tây Sơn  ( Tầng 6, tòa nhà Mipec Tower, Số 175, Phố Tây Sơn, Phường Trung Liệt, Q.Đống Đa, Hà Nội)', 'Jan-8', 100),
+('SPIDER-MAN:INTO THE SPIDER-VERSE', 'Tầng 3 Coop Mart, 478 Điện Biên Phủ, Quận Thanh Khê, Đà Nẵng', 'Jan-7', 90),
+('SPIDER-MAN:INTO THE SPIDER-VERSE', 'Tầng 3 Coop Mart, 478 Điện Biên Phủ, Quận Thanh Khê, Đà Nẵng', 'Jan-8', 90),
+('Cỗ máy tử thần', 'Tầng 3 Coop Mart, 478 Điện Biên Phủ, Quận Thanh Khê, Đà Nẵng', 'Jan-6', 100),
+('Cỗ máy tử thần', 'Tầng 3 Coop Mart, 478 Điện Biên Phủ, Quận Thanh Khê, Đà Nẵng', 'Jan-7', 100),
+('Cỗ máy tử thần', 'Tầng 3 Coop Mart, 478 Điện Biên Phủ, Quận Thanh Khê, Đà Nẵng', 'Jan-8', 100),
+('Cỗ máy tử thần', 'HM Tây Sơn  ( Tầng 6, tòa nhà Mipec Tower, Số 175, Phố Tây Sơn, Phường Trung Liệt, Q.Đống Đa, Hà Nội)', 'Jan-6', 70),
+('Cỗ máy tử thần', 'HM Tây Sơn  ( Tầng 6, tòa nhà Mipec Tower, Số 175, Phố Tây Sơn, Phường Trung Liệt, Q.Đống Đa, Hà Nội)', 'Jan-7', 70),
+('Cỗ máy tử thần', 'HM Tây Sơn  ( Tầng 6, tòa nhà Mipec Tower, Số 175, Phố Tây Sơn, Phường Trung Liệt, Q.Đống Đa, Hà Nội)', 'Jan-8', 70),
+('Cỗ máy tử thần', 'HM Nguyễn Du (116 Nguyễn Du, Quận 1, Tp.HCM)', 'Jan-6', 50),
+('Cỗ máy tử thần', 'HM Nguyễn Du (116 Nguyễn Du, Quận 1, Tp.HCM)', 'Jan-7', 50),
+('Cỗ máy tử thần', 'HM Nguyễn Du (116 Nguyễn Du, Quận 1, Tp.HCM)', 'Jan-8', 50),
+('Gái già lắm chiêu', 'HM Nguyễn Du (116 Nguyễn Du, Quận 1, Tp.HCM)', 'Jan-6', 100),
+('Gái già lắm chiêu', 'HM Nguyễn Du (116 Nguyễn Du, Quận 1, Tp.HCM)', 'Jan-7', 100),
+('Gái già lắm chiêu', 'HM Nguyễn Du (116 Nguyễn Du, Quận 1, Tp.HCM)', 'Jan-8', 100),
+('Gái già lắm chiêu', 'Tầng 3 Coop Mart, 478 Điện Biên Phủ, Quận Thanh Khê, Đà Nẵng', 'Jan-6', 70),
+('Gái già lắm chiêu', 'Tầng 3 Coop Mart, 478 Điện Biên Phủ, Quận Thanh Khê, Đà Nẵng', 'Jan-7', 60),
+('Gái già lắm chiêu', 'Tầng 3 Coop Mart, 478 Điện Biên Phủ, Quận Thanh Khê, Đà Nẵng', 'Jan-8', 70),
+('Gái già lắm chiêu', 'HM Tây Sơn  ( Tầng 6, tòa nhà Mipec Tower, Số 175, Phố Tây Sơn, Phường Trung Liệt, Q.Đống Đa, Hà Nội)', 'Jan-6', 90),
+('Gái già lắm chiêu', 'HM Tây Sơn  ( Tầng 6, tòa nhà Mipec Tower, Số 175, Phố Tây Sơn, Phường Trung Liệt, Q.Đống Đa, Hà Nội)', 'Jan-7', 90),
+('Gái già lắm chiêu', 'HM Tây Sơn  ( Tầng 6, tòa nhà Mipec Tower, Số 175, Phố Tây Sơn, Phường Trung Liệt, Q.Đống Đa, Hà Nội)', 'Jan-8', 90);
+
+-- --------------------------------------------------------
+--
+ALTER TABLE `datve`
+  ADD PRIMARY KEY (`id`);
+--
+ALTER TABLE `datve`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `phim`
+
+
 INSERT INTO `khuyenmai` (`IdKM`, `TenKM`, `Image`, `ChitietKM`, `hinhanh`) VALUES
 (1, 'Móc Khóa Cực Cool Chào Bumbleb', 'km1.png', 'Ngay từ khi mới xuất hiện trong Transformers, người máy Bumblebee đã nhanh chóng chiếm lấy trái tim người hâm mộ loạt phim <br/> <br/>\r\n             bom tấn này và trở thành một trong những cái tên đình đám nhất. Năm nay, Bumblebee sẽ “xuất trận” mà không có người bạn <br/> <br/>\r\n              Optimus Prime bên cạnh trong bộ phim của riêng cậu chàng. <br/> <br/>\r\n\r\n            Quay ngược thời gian, trở về với tuổi thơ của “chú ong nghệ”, HM Cinema dành tặng các Stars những móc khóa Bumblebee vô  <br/> <br/>\r\n            cùng đặc sắc chỉ 79.000 VNĐ. Đặc biệt, khi mua 01 móc khóa Bumblebee, các Stars sẽ được giảm 15.000 VNĐ khi mua Combo 1 <br/> <br/>\r\n             hoặc Combo 2. <br/> <br/>\r\n\r\n            *Giá áp dụng cho các rạp tại Tp.HCM <br/> <br/>\r\n\r\n            Móc khóa Bumblebee sẽ có mặt tại HM Cinema từ 07.12.2018. Chương trình sẽ kết thúc ngay khi lượng Combo được bán hết, tất  <br/> <br/>\r\n            nhiên kèm theo các ưu đãi: <br/> <br/>\r\n\r\n            •    Mỗi Combo sẽ đượ', 'km11.jpg'),
 (2, 'Đón Giáng Sinh – Nhận Quà Xinh', 'km2.png', 'Những ngày tháng 12 bận rộn, các Stars đừng quên ghé rạp để thưởng thức loạt bom tấn trong và ngoài nước\r\n             dịp cuối năm và nhận ngay một phần quà đủ-dùng-cả-2019 từ HM Cinema nhé.<br/><br/>\r\n\r\n            Từ 01.12 – 31.12.2018, các Stars sẽ có cơ hội nhận được một quyển lịch để bàn xinh xắn với thiết kế độc đáo<\r\n             và ấn tượng khi mua từ 02 vé xem phim + combo 2/combo 2 extra/combo 3/combo 3 extra/combo phim.<br/><br/>\r\n            Điều kiện chương trình:<br/><br/>\r\n\r\n            Áp dụng cho khách hàng có thẻ thành viên HM Cinema.<br/>\r\n            Không áp dụng cho giao dịch sử dụng movie voucher.<br/>\r\n            Không áp dụng song song với các chương trình khuyến mãi khác.<br/>\r\n            Chương trình có thể kết thúc sớm nếu số lượng quà tặng được phát hết.<br/>\r\n            Trong mọi trường hợp, quyết định của HM Cinema là quyết định cuối cùng.<br/>', 'km11.jpg'),
