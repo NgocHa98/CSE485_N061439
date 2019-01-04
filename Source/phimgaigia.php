@@ -27,10 +27,19 @@
             <div class ="caption">
                 <br>
                 <p>                    
-                  <centrer><a href="#" class="btn btn-danger ">Đặt vé</a></center>
+                   <centrer><a href="datve.php" class="btn btn-danger ">Đặt vé</a></center>
                 </p>
             </div> 
         </div>
+         <div class="chitiet">
+                <br>
+                <p style="color: blue"><b>Giá vé: <?php echo $row["giave"] ?></b> </p>
+                <p> <b>Giờ Chiếu:</b>
+                <p class="btn btn-infor ">8:00</p>
+                <p class="btn btn-infor ">10:30</p>
+                <p class="btn btn-infor ">15:45</p>
+                </p>
+            </div>
         <div class="col-md-6" >
             <h3><b><?php echo $row["tenphim"] ?></b></h3> <br>
             <p><?php echo $row["ChiTiet"] ?> </p> <br>
